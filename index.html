@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar System Explorer & Audio Archive</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header>
+    <a href="#" class="logo" id="home-link">HOME</a>
+    <nav id="nav-bar"></nav>
+  </header>
+
+  <!-- HOME VIEW -->
+  <main id="home-view">
+    <section class="hero">
+      <h1>Explore Our Cosmic Neighborhood</h1>
+
+    </section>
+    <div class="planet-grid" id="planet-grid"></div>
+  </main>
+
+  <!-- SUBPAGE VIEW -->
+  <main id="planet-view" class="hidden">
+    <a href="#" class="back-btn">← All Bodies</a>
+
+    <div class="planet-detail-container">
+      <!-- Visual Sphere -->
+      <div class="visual-stage">
+        <div class="orbit-ring">
+          <div class="planet-sphere" id="detail-sphere"></div>
+        </div>
+        <p class="orbit-caption" id="detail-orbit-caption"></p>
+      </div>
+
+      <!-- Telemetry & Music Player -->
+      <div class="telemetry-panel">
+        <span class="planet-type" id="detail-type"></span>
+        <h1 id="detail-name"></h1>
+        <p class="description" id="detail-desc"></p>
+
+        <!-- Musical Track Player Box -->
+        <div class="audio-player-box">
+          <div class="audio-icon">🎵</div>
+          <div class="audio-info">
+            <span class="audio-label">Station Anthem / Soundtrack</span>
+            <h4 id="audio-track-title">Loading track...</h4>
+          </div>
+          <button id="play-audio-btn" class="play-btn">▶ Play</button>
+          <!-- Hidden audio element populated dynamically -->
+          <audio id="planet-audio" preload="none"></audio>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Distance from Sun</span>
+            <span class="stat-value" id="detail-light-min"></span>
+            <span class="stat-sub" id="detail-km"></span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-label">Mass (vs. Earth)</span>
+            <span class="stat-value" id="detail-mass"></span>
+            <span class="stat-sub" id="detail-gravity"></span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-label">Orbital Period</span>
+            <span class="stat-value" id="detail-orbit"></span>
+            <span class="stat-sub" id="detail-speed"></span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-label">Day Length & Temp</span>
+            <span class="stat-value" id="detail-day"></span>
+            <span class="stat-sub" id="detail-temp"></span>
+          </div>
+        </div>
+
+        <!-- QR Code Box -->
+        <div class="qr-section">
+          <div id="qrcode"></div>
+          <div class="qr-info">
+            <h3>Station QR Code</h3>
+            <p>Scan to open this page:</p>
+            <code id="qr-url"></code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
